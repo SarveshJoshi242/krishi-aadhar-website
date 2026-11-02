@@ -205,7 +205,7 @@
             <!-- Phone Frame -->
             <div class="phone-mockup">
               <div class="phone-speaker"></div>
-              <img src="assets/images/screen_home_farmtools.png" alt="Krishi-Aadhar Android Home Screen" class="phone-screen" loading="lazy">
+              <img src="assets/images/home_dashboard.png" alt="Krishi-Aadhar Android Home Screen" class="phone-screen" loading="lazy">
             </div>
 
             <!-- Floating Metric 2 -->
@@ -736,60 +736,113 @@
   </section>
 
   <!-- ==========================================================================
-       8. App Screenshots Showcase Gallery
+       8. App Screenshots Showcase Gallery (8 Diverse Core Modules)
        ========================================================================== -->
   <section id="screenshots" class="py-24 border-t border-slate-200 bg-slate-50 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
-        <span class="text-xs font-bold uppercase tracking-wider text-emerald-700">Production Interface</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">Crafted in Jetpack Compose</h2>
-        <p class="text-slate-600 text-base">Modern Material 3 user interface designed for high readability in outdoor agricultural field sunlight.</p>
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-700">Production Android Interface</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">Explore All Core Modules</h2>
+        <p class="text-slate-600 text-base">Actual application screenshots captured from the live Android build running on device. Click any screen to view full resolution.</p>
       </div>
 
+      <!-- 8-Card Responsive Screenshot Grid -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         
-        <!-- Screen 1: Home Farm Tools -->
-        <div class="glass-card p-3 space-y-3 group">
-          <div class="overflow-hidden rounded-xl border border-slate-200 bg-white">
-            <img src="assets/images/screen_farmtools_full.png" alt="Krishi-Aadhar Farm Tools" class="w-full h-auto group-hover:scale-105 transition-transform duration-300" loading="lazy">
+        <!-- Screen 1: Home & Agro-Weather -->
+        <div class="glass-card p-3 space-y-3 group cursor-pointer screenshot-card" data-img="assets/images/home_dashboard.png" data-title="Home & Agro-Weather Dashboard">
+          <div class="overflow-hidden rounded-2xl border border-slate-200 bg-white relative">
+            <span class="absolute top-3 left-3 z-10 text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300">Weather & Advisory</span>
+            <img src="assets/images/home_dashboard.png" alt="Home & Agro-Weather Dashboard" class="w-full h-auto group-hover:scale-105 transition-transform duration-300" loading="lazy">
           </div>
           <div class="px-2 pb-2">
-            <h4 class="text-sm font-bold text-slate-900">Smart Farm Tools Hub</h4>
-            <p class="text-xs text-slate-500 mt-0.5">Quick access to soil analyzer, water scheduler, and crop budget cashbook.</p>
+            <h4 class="text-sm font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">Home & Agro-Weather</h4>
+            <p class="text-xs text-slate-500 mt-1 leading-relaxed">Live OpenWeatherMap forecast, active crop cycle monitoring, and AI seasonal crop recommendations.</p>
           </div>
         </div>
 
-        <!-- Screen 2: Voice Assistant -->
-        <div class="glass-card p-3 space-y-3 group">
-          <div class="overflow-hidden rounded-xl border border-slate-200 bg-white">
-            <img src="assets/images/screen_voice_assistant.png" alt="Voice Assistant Interface" class="w-full h-auto group-hover:scale-105 transition-transform duration-300" loading="lazy">
+        <!-- Screen 2: AI Pest Doctor -->
+        <div class="glass-card p-3 space-y-3 group cursor-pointer screenshot-card" data-img="assets/images/pest_scan.png" data-title="AI Pest & Disease Doctor">
+          <div class="overflow-hidden rounded-2xl border border-slate-200 bg-white relative">
+            <span class="absolute top-3 left-3 z-10 text-[10px] font-bold px-2 py-0.5 rounded-full bg-rose-100 text-rose-800 border border-rose-300">Vision Diagnosis</span>
+            <img src="assets/images/pest_scan.png" alt="AI Pest Doctor & Disease Diagnosis" class="w-full h-auto group-hover:scale-105 transition-transform duration-300" loading="lazy">
           </div>
           <div class="px-2 pb-2">
-            <h4 class="text-sm font-bold text-slate-900">Multilingual Voice AI</h4>
-            <p class="text-xs text-slate-500 mt-0.5">Animated mic recording with instant translation and verbal response.</p>
+            <h4 class="text-sm font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">AI Pest Doctor</h4>
+            <p class="text-xs text-slate-500 mt-1 leading-relaxed">Camera leaf scan with 98.6% confidence rating and CIBRC approved active fungicide dosages.</p>
           </div>
         </div>
 
-        <!-- Screen 3: Marathi Localized -->
-        <div class="glass-card p-3 space-y-3 group">
-          <div class="overflow-hidden rounded-xl border border-slate-200 bg-white">
-            <img src="assets/images/screen_marathi_active.png" alt="Marathi Localization" class="w-full h-auto group-hover:scale-105 transition-transform duration-300" loading="lazy">
+        <!-- Screen 3: Soil Health & NPK Hub -->
+        <div class="glass-card p-3 space-y-3 group cursor-pointer screenshot-card" data-img="assets/images/tool_soil_water.png" data-title="Soil Health & NPK Fertilizer Hub">
+          <div class="overflow-hidden rounded-2xl border border-slate-200 bg-white relative">
+            <span class="absolute top-3 left-3 z-10 text-[10px] font-bold px-2 py-0.5 rounded-full bg-teal-100 text-teal-800 border border-teal-300">Soil Precision</span>
+            <img src="assets/images/tool_soil_water.png" alt="Soil Health & NPK Management" class="w-full h-auto group-hover:scale-105 transition-transform duration-300" loading="lazy">
           </div>
           <div class="px-2 pb-2">
-            <h4 class="text-sm font-bold text-slate-900">शेतकरी आधार (मराठी)</h4>
-            <p class="text-xs text-slate-500 mt-0.5">Complete UI localization supporting regional Maharashtra farmers.</p>
+            <h4 class="text-sm font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">Soil & Fertilizer Hub</h4>
+            <p class="text-xs text-slate-500 mt-1 leading-relaxed">Exact 50kg bag requirements for Urea, DAP, and MOP plus lime/gypsum pH amendments.</p>
           </div>
         </div>
 
-        <!-- Screen 4: Community Feed -->
-        <div class="glass-card p-3 space-y-3 group">
-          <div class="overflow-hidden rounded-xl border border-slate-200 bg-white">
-            <img src="assets/images/screen_community.png" alt="Farmer Community Feed" class="w-full h-auto group-hover:scale-105 transition-transform duration-300" loading="lazy">
+        <!-- Screen 4: Irrigation Scheduler -->
+        <div class="glass-card p-3 space-y-3 group cursor-pointer screenshot-card" data-img="assets/images/verified_irrigation_tab.png" data-title="Smart Irrigation & Phenology Schedule">
+          <div class="overflow-hidden rounded-2xl border border-slate-200 bg-white relative">
+            <span class="absolute top-3 left-3 z-10 text-[10px] font-bold px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 border border-blue-300">Water Management</span>
+            <img src="assets/images/verified_irrigation_tab.png" alt="Smart Irrigation Schedule" class="w-full h-auto group-hover:scale-105 transition-transform duration-300" loading="lazy">
           </div>
           <div class="px-2 pb-2">
-            <h4 class="text-sm font-bold text-slate-900">Farmer Community Forum</h4>
-            <p class="text-xs text-slate-500 mt-0.5">Share field photos, ask questions, and learn from progressive farmers.</p>
+            <h4 class="text-sm font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">Smart Irrigation Calendar</h4>
+            <p class="text-xs text-slate-500 mt-1 leading-relaxed">Phenological crop stage water scheduling with automated weather-delay rain alerts.</p>
+          </div>
+        </div>
+
+        <!-- Screen 5: Pitch Crop & Marketplace -->
+        <div class="glass-card p-3 space-y-3 group cursor-pointer screenshot-card" data-img="assets/images/tab3_pitch_crop.png" data-title="Marketplace & Pitch Crop">
+          <div class="overflow-hidden rounded-2xl border border-slate-200 bg-white relative">
+            <span class="absolute top-3 left-3 z-10 text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 border border-amber-300">Decentralized Trade</span>
+            <img src="assets/images/tab3_pitch_crop.png" alt="Pitch Crop & Direct Marketplace" class="w-full h-auto group-hover:scale-105 transition-transform duration-300" loading="lazy">
+          </div>
+          <div class="px-2 pb-2">
+            <h4 class="text-sm font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">Pitch Crop & Marketplace</h4>
+            <p class="text-xs text-slate-500 mt-1 leading-relaxed">Direct peer-to-peer crop listings, quantity management, buyer discovery, and zero middleman cuts.</p>
+          </div>
+        </div>
+
+        <!-- Screen 6: Expenses & Farmer Wallet -->
+        <div class="glass-card p-3 space-y-3 group cursor-pointer screenshot-card" data-img="assets/images/tab4_expenses.png" data-title="Farm Expenses & Digital Wallet">
+          <div class="overflow-hidden rounded-2xl border border-slate-200 bg-white relative">
+            <span class="absolute top-3 left-3 z-10 text-[10px] font-bold px-2 py-0.5 rounded-full bg-indigo-100 text-indigo-800 border border-indigo-300">Farm Finance</span>
+            <img src="assets/images/tab4_expenses.png" alt="Farmer Wallet & Cashbook" class="w-full h-auto group-hover:scale-105 transition-transform duration-300" loading="lazy">
+          </div>
+          <div class="px-2 pb-2">
+            <h4 class="text-sm font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">Expenses & Wallet Hub</h4>
+            <p class="text-xs text-slate-500 mt-1 leading-relaxed">Per-acre crop budget breakdown, daily expense ledger, and passbook transaction audit.</p>
+          </div>
+        </div>
+
+        <!-- Screen 7: Government Schemes Explorer -->
+        <div class="glass-card p-3 space-y-3 group cursor-pointer screenshot-card" data-img="assets/images/tab5_schemes.png" data-title="Government Schemes & Subsidies">
+          <div class="overflow-hidden rounded-2xl border border-slate-200 bg-white relative">
+            <span class="absolute top-3 left-3 z-10 text-[10px] font-bold px-2 py-0.5 rounded-full bg-purple-100 text-purple-800 border border-purple-300">Welfare & Grants</span>
+            <img src="assets/images/tab5_schemes.png" alt="Government Agri Schemes" class="w-full h-auto group-hover:scale-105 transition-transform duration-300" loading="lazy">
+          </div>
+          <div class="px-2 pb-2">
+            <h4 class="text-sm font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">Government Schemes</h4>
+            <p class="text-xs text-slate-500 mt-1 leading-relaxed">Instant eligibility criteria and official links for PM-KISAN, PMFBY, Soil Health Card, and PM-KUSUM.</p>
+          </div>
+        </div>
+
+        <!-- Screen 8: Farmer Community Network -->
+        <div class="glass-card p-3 space-y-3 group cursor-pointer screenshot-card" data-img="assets/images/screen_community_view.png" data-title="Kisan Community Network">
+          <div class="overflow-hidden rounded-2xl border border-slate-200 bg-white relative">
+            <span class="absolute top-3 left-3 z-10 text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300">Kisan Network</span>
+            <img src="assets/images/screen_community_view.png" alt="Kisan Community Feed" class="w-full h-auto group-hover:scale-105 transition-transform duration-300" loading="lazy">
+          </div>
+          <div class="px-2 pb-2">
+            <h4 class="text-sm font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">Farmer Community Feed</h4>
+            <p class="text-xs text-slate-500 mt-1 leading-relaxed">Peer-to-peer farmer discussions, field photo updates, disease queries, and regional wisdom sharing.</p>
           </div>
         </div>
 
@@ -797,6 +850,23 @@
 
     </div>
   </section>
+
+  <!-- ==========================================================================
+       Screenshot Lightbox Modal
+       ========================================================================== -->
+  <div id="lightbox-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm transition-all duration-300">
+    <div class="relative max-w-sm sm:max-w-md w-full bg-white rounded-3xl p-4 shadow-2xl border border-slate-200">
+      <button id="close-lightbox-btn" class="absolute top-4 right-4 z-20 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center font-bold text-sm transition-colors" aria-label="Close image">
+        ✕
+      </button>
+      <div class="text-center pb-3">
+        <h3 id="lightbox-title" class="text-sm font-bold text-slate-900">Application Screen</h3>
+      </div>
+      <div class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 max-h-[75vh] flex items-center justify-center">
+        <img id="lightbox-img" src="" alt="Enlarged Screenshot" class="w-full h-auto object-contain">
+      </div>
+    </div>
+  </div>
 
   <!-- ==========================================================================
        9. APK Direct Download Hub & Integrity Verification

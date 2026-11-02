@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initVoiceAssistant();
   initQRCodeModal();
   initCopyButtons();
+  initLightbox();
 });
 
 /* ==========================================================================
@@ -503,5 +504,40 @@ function initCopyButtons() {
         }, 2000);
       });
     });
+  });
+}
+
+/* ==========================================================================
+   8. Fullscreen Image Lightbox Modal
+   ========================================================================== */
+function initLightbox() {
+  const modal = document.getElementById('lightbox-modal');
+  const imgEl = document.getElementById('lightbox-img');
+  const titleEl = document.getElementById('lightbox-title');
+  const closeBtn = document.getElementById('close-lightbox-btn');
+  const cards = document.querySelectorAll('.screenshot-card');
+
+  if (!modal || !imgEl || !cards.length) return;
+
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      const src = card.dataset.img;
+      const title = card.dataset.title || 'Application Screen';
+      imgEl.src = src;
+      if (titleEl) titleEl.textContent = title;
+      modal.classList.remove('hidden');
+    });
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      modal.classList.add('hidden');
+    });
+  }
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.add('hidden');
+    }
   });
 }
