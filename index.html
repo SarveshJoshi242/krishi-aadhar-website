@@ -13,6 +13,11 @@
   <meta property="og:description" content="Download the Krishi-Aadhar Android App. AI disease diagnostics, live Mandi rates, soil health calculators, and multilingual voice assistant.">
   <meta property="og:image" content="assets/images/krishi_aadhar_ai_presentation_poster.jpg">
 
+  <!-- Cache Control to guarantee immediate browser updates -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌾</text></svg>">
 
@@ -52,7 +57,7 @@
   </script>
 
   <!-- Custom CSS (Light Theme) -->
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=3.0">
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-emerald-500 selection:text-white">
 
@@ -243,11 +248,17 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         
         <!-- Card 1: AI Disease Doctor -->
-        <div class="glass-card p-7 space-y-4">
-          <div class="w-12 h-12 rounded-xl bg-emerald-100 border border-emerald-200 text-emerald-700 flex items-center justify-center text-2xl">
-            🔬
+        <div class="glass-card p-5 space-y-4">
+          <div class="overflow-hidden rounded-xl border border-slate-200 bg-slate-50 h-44 relative">
+            <span class="absolute top-2 left-2 z-10 text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300">Live AI Vision</span>
+            <img src="assets/images/pest_tab.jpg" alt="AI Disease Doctor Interface" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300" loading="lazy">
           </div>
-          <h4 class="text-xl font-bold text-slate-900">AI Pest & Disease Doctor</h4>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-emerald-100 border border-emerald-200 text-emerald-700 flex items-center justify-center text-xl shrink-0">
+              🔬
+            </div>
+            <h4 class="text-lg font-bold text-slate-900">AI Pest & Disease Doctor</h4>
+          </div>
           <p class="text-sm text-slate-600 leading-relaxed">
             Snap a photo of leaf symptoms. Our custom-trained MobileNetV3Large CNN identifies 39 disease classes with 98.6% accuracy, paired with Google Gemini 2.0 Flash for biological descriptions.
           </p>
@@ -259,11 +270,17 @@
         </div>
 
         <!-- Card 2: Multilingual Voice Assistant -->
-        <div class="glass-card p-7 space-y-4">
-          <div class="w-12 h-12 rounded-xl bg-teal-100 border border-teal-200 text-teal-700 flex items-center justify-center text-2xl">
-            🎙️
+        <div class="glass-card p-5 space-y-4">
+          <div class="overflow-hidden rounded-xl border border-slate-200 bg-slate-50 h-44 relative">
+            <span class="absolute top-2 left-2 z-10 text-[10px] font-bold px-2 py-0.5 rounded-full bg-teal-100 text-teal-800 border border-teal-300">Multilingual Voice</span>
+            <img src="assets/images/screen_voice_assistant.png" alt="Voice Assistant Interface" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300" loading="lazy">
           </div>
-          <h4 class="text-xl font-bold text-slate-900">Multilingual Voice AI</h4>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-teal-100 border border-teal-200 text-teal-700 flex items-center justify-center text-xl shrink-0">
+              🎙️
+            </div>
+            <h4 class="text-lg font-bold text-slate-900">Multilingual Voice AI</h4>
+          </div>
           <p class="text-sm text-slate-600 leading-relaxed">
             Built for rural accessibility. Farmers speak naturally in Marathi, Hindi, or English. The assistant transcribes queries, processes agronomic context, and responds via localized Text-To-Speech (TTS).
           </p>
@@ -275,11 +292,17 @@
         </div>
 
         <!-- Card 3: Mandi Tracker & MSP -->
-        <div class="glass-card p-7 space-y-4">
-          <div class="w-12 h-12 rounded-xl bg-amber-100 border border-amber-200 text-amber-700 flex items-center justify-center text-2xl">
-            📊
+        <div class="glass-card p-5 space-y-4">
+          <div class="overflow-hidden rounded-xl border border-slate-200 bg-slate-50 h-44 relative">
+            <span class="absolute top-2 left-2 z-10 text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 border border-amber-300">Mandi & Weather</span>
+            <img src="assets/images/home_dashboard.png" alt="Live Mandi and Weather" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300" loading="lazy">
           </div>
-          <h4 class="text-xl font-bold text-slate-900">Live APMC Mandi & MSP</h4>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-amber-100 border border-amber-200 text-amber-700 flex items-center justify-center text-xl shrink-0">
+              📊
+            </div>
+            <h4 class="text-lg font-bold text-slate-900">Live APMC Mandi & MSP</h4>
+          </div>
           <p class="text-sm text-slate-600 leading-relaxed">
             Eliminate middleman exploitation. Access real-time commodity prices from major agricultural mandis (Kolhapur, Pune, Nashik, etc.) with automated Government Minimum Support Price (MSP) comparisons.
           </p>
@@ -291,11 +314,17 @@
         </div>
 
         <!-- Card 4: Soil Health & NPK Calculator -->
-        <div class="glass-card p-7 space-y-4">
-          <div class="w-12 h-12 rounded-xl bg-green-100 border border-green-200 text-green-700 flex items-center justify-center text-2xl">
-            🧪
+        <div class="glass-card p-5 space-y-4">
+          <div class="overflow-hidden rounded-xl border border-slate-200 bg-slate-50 h-44 relative">
+            <span class="absolute top-2 left-2 z-10 text-[10px] font-bold px-2 py-0.5 rounded-full bg-green-100 text-green-800 border border-green-300">NPK Precision</span>
+            <img src="assets/images/tool_soil_water.png" alt="Soil Health & NPK Tools" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300" loading="lazy">
           </div>
-          <h4 class="text-xl font-bold text-slate-900">Soil Health & NPK Calculator</h4>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-green-100 border border-green-200 text-green-700 flex items-center justify-center text-xl shrink-0">
+              🧪
+            </div>
+            <h4 class="text-lg font-bold text-slate-900">Soil Health & NPK Calculator</h4>
+          </div>
           <p class="text-sm text-slate-600 leading-relaxed">
             Input soil test results or target acreage. Calculates exact 50kg bag requirements of Urea, DAP, and MOP, alongside agricultural lime/gypsum soil amendments and 3-stage split schedules.
           </p>
@@ -307,11 +336,17 @@
         </div>
 
         <!-- Card 5: Decentralized P2P Marketplace -->
-        <div class="glass-card p-7 space-y-4">
-          <div class="w-12 h-12 rounded-xl bg-blue-100 border border-blue-200 text-blue-700 flex items-center justify-center text-2xl">
-            🤝
+        <div class="glass-card p-5 space-y-4">
+          <div class="overflow-hidden rounded-xl border border-slate-200 bg-slate-50 h-44 relative">
+            <span class="absolute top-2 left-2 z-10 text-[10px] font-bold px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 border border-blue-300">P2P Marketplace</span>
+            <img src="assets/images/tab3_pitch_crop.png" alt="Decentralized Marketplace" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300" loading="lazy">
           </div>
-          <h4 class="text-xl font-bold text-slate-900">Decentralized Trade & Chat</h4>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-blue-100 border border-blue-200 text-blue-700 flex items-center justify-center text-xl shrink-0">
+              🤝
+            </div>
+            <h4 class="text-lg font-bold text-slate-900">Decentralized Trade & Chat</h4>
+          </div>
           <p class="text-sm text-slate-600 leading-relaxed">
             Direct farmer-to-buyer commerce. Features GPS radius filtering for localized farm pickups and bidirectional Spring STOMP WebSocket chat for private price negotiation.
           </p>
@@ -323,11 +358,17 @@
         </div>
 
         <!-- Card 6: Offline-First & Native Reports -->
-        <div class="glass-card p-7 space-y-4">
-          <div class="w-12 h-12 rounded-xl bg-purple-100 border border-purple-200 text-purple-700 flex items-center justify-center text-2xl">
-            📄
+        <div class="glass-card p-5 space-y-4">
+          <div class="overflow-hidden rounded-xl border border-slate-200 bg-slate-50 h-44 relative">
+            <span class="absolute top-2 left-2 z-10 text-[10px] font-bold px-2 py-0.5 rounded-full bg-purple-100 text-purple-800 border border-purple-300">Native PDF</span>
+            <img src="assets/images/crop_report_generation.jpg" alt="One-Click PDF Reports" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300" loading="lazy">
           </div>
-          <h4 class="text-xl font-bold text-slate-900">One-Click PDF Reports</h4>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-purple-100 border border-purple-200 text-purple-700 flex items-center justify-center text-xl shrink-0">
+              📄
+            </div>
+            <h4 class="text-lg font-bold text-slate-900">One-Click PDF Reports</h4>
+          </div>
           <p class="text-sm text-slate-600 leading-relaxed">
             Generate professional A4 printable diagnosis reports and financial passbooks directly on device using Android's native graphics engine without needing third-party cloud generators.
           </p>
@@ -392,6 +433,14 @@
             <div class="flex items-center justify-between">
               <span class="text-xs font-mono text-slate-500">MODEL: MobileNetV3Large</span>
               <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800 border border-emerald-300">VALID DIAGNOSIS</span>
+            </div>
+
+            <!-- Leaf Camera Specimen Photo -->
+            <div class="relative overflow-hidden rounded-xl border border-slate-200 bg-white">
+              <img id="res-leaf-img" src="assets/images/pest_tab.jpg" alt="Leaf Specimen Scan" class="w-full h-44 object-cover object-top">
+              <div class="absolute bottom-2 left-2 bg-black/60 backdrop-blur-sm text-white text-[10px] font-mono px-2 py-0.5 rounded">
+                Live Field Leaf Specimen
+              </div>
             </div>
 
             <div>
@@ -1016,6 +1065,6 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js?v=3.0"></script>
 </body>
 </html>

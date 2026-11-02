@@ -57,6 +57,7 @@ const sampleDiseases = {
     status: 'CONFIRMED DIAGNOSIS',
     statusColor: 'emerald',
     icon: '🍅',
+    img: 'assets/images/pest_tab.jpg',
     symptoms: 'Concentric dark brown rings ("bullseye" target spots) on lower older foliage surrounded by chlorotic yellow halo.',
     medicine: 'Mancozeb 75% WP or Azoxystrobin 18.2% + Difenoconazole 11.4% SC',
     brand: 'Ridomil Gold / Amistar Top',
@@ -73,6 +74,7 @@ const sampleDiseases = {
     status: 'CONFIRMED DIAGNOSIS',
     statusColor: 'emerald',
     icon: '🥔',
+    img: 'assets/images/ai_analysing_after_login.jpg',
     symptoms: 'Water-soaked irregular blackish-purple lesions rapidly expanding in high humidity; white fungal mildew on leaf undersides.',
     medicine: 'Cymoxanil 8% + Mancozeb 64% WP or Dimethomorph 50% WP',
     brand: 'Curzate M8 / Acrobat',
@@ -89,6 +91,7 @@ const sampleDiseases = {
     status: 'CONFIRMED DIAGNOSIS',
     statusColor: 'emerald',
     icon: '🌾',
+    img: 'assets/images/pest_scan.png',
     symptoms: 'Upward/downward leaf cupping, thickening of primary veins, enations (leaf-like outgrowths) on lower leaf surface.',
     medicine: 'Imidacloprid 17.8% SL or Dinotefuran 20% SG (Controls Whitefly vector)',
     brand: 'Confidor / Oshin',
@@ -105,6 +108,7 @@ const sampleDiseases = {
     status: 'CONFIRMED DIAGNOSIS',
     statusColor: 'emerald',
     icon: '🌾',
+    img: 'assets/images/mock_disease_photo.jpg',
     symptoms: 'Water-soaked to yellowish-green wavy stripes along leaf margins; milky bacterial ooze droplets visible in early morning.',
     medicine: 'Streptocycline (90:10) + Copper Oxychloride 50% WP',
     brand: 'Streptomycin Sulphate + Blitox-50',
@@ -121,6 +125,7 @@ const sampleDiseases = {
     status: 'CONFIRMED DIAGNOSIS',
     statusColor: 'emerald',
     icon: '🎋',
+    img: 'assets/images/pest_tab.jpg',
     symptoms: 'Third and fourth leaves wither from tip; internal pith tissue shows bright red discoloration interspersed with white transverse bands.',
     medicine: 'Carbendazim 50% WP or Thiophanate Methyl 70% WP',
     brand: 'Bavistin / Roko',
@@ -137,6 +142,7 @@ const sampleDiseases = {
     status: 'CONFIRMED DIAGNOSIS',
     statusColor: 'emerald',
     icon: '🌶️',
+    img: 'assets/images/ai_analysing_after_login.jpg',
     symptoms: 'Circular sunken black lesions on ripening fruits; twig tips dry up turning straw-colored from top downward ("Die-back").',
     medicine: 'Azoxystrobin 18.2% + Difenoconazole 11.4% SC or Tebuconazole 25.9% EC',
     brand: 'Custodia / Folicur',
@@ -178,6 +184,8 @@ function initDiseaseDoctor() {
         resultCard.style.opacity = '1';
 
         document.getElementById('res-crop').textContent = data.crop;
+        const leafImg = document.getElementById('res-leaf-img');
+        if (leafImg && data.img) leafImg.src = data.img;
         document.getElementById('res-disease').textContent = data.disease;
         document.getElementById('res-confidence').textContent = data.confidence;
         document.getElementById('res-pathogen').textContent = data.pathogen;
