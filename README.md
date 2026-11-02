@@ -48,41 +48,18 @@ Official showcase website and direct Android APK download distribution hub for *
    - Searchable wholesale price monitor tracking Kolhapur, Pune, Nashik, Nagpur, and Mumbai mandis with MSP benchmark comparisons and 7-day trend indicators.
 5. **Multilingual Voice Assistant Showcase**:
    - Interactive voice synthesizer supporting Marathi (मराठी), Hindi (हिंदी), and English with animated audio waves and localized voice responses.
-6. **Mathematical Foundations & Scientific Rigor**:
-   - KaTeX rendered proofs for Depthwise Separable Convolution 88% FLOP reduction, Hard-Swish piecewise linear activation, and Haversine great-circle navigation formula.
-7. **System Architecture & App Screenshots Gallery**:
-   - High-resolution four-tier system architecture diagrams and Material 3 Jetpack Compose application screen captures.
+6. **App Screenshots Gallery**:
+   - High-resolution Material 3 Jetpack Compose application screen captures across Marathi localization, farm tools, voice AI, and community feed.
 
 ---
 
-## 🚀 How to Enable GitHub Pages (Hosting)
+## 🚀 GitHub Pages (Hosting)
 
-This website is configured for zero-configuration native hosting on GitHub Pages:
-
-### Method 1: Deploy from Branch (Fastest)
-1. In your GitHub repository, navigate to **Settings** > **Pages** (under Code and automation).
+This website is hosted directly from the `main` branch:
+1. In your GitHub repository, navigate to **Settings** > **Pages**.
 2. Under **Build and deployment** > **Source**, select **Deploy from a branch**.
 3. Under **Branch**, select `main` and folder `/ (root)`, then click **Save**.
-4. In ~60 seconds, your website will be live at `https://<username>.github.io/krishi-aadhar-website/`.
-
-### Method 2: GitHub Actions (Automated CI/CD)
-1. Navigate to **Settings** > **Pages**.
-2. Under **Source**, choose **GitHub Actions**.
-3. The included workflow [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) will automatically run on every push and deploy the site!
-
----
-
-## 👥 Academic Credits & Authorship
-
-**KIT's College of Engineering Kolhapur (Empowered Autonomous)**  
-*Department of Computer Science & Engineering (AIML)*  
-**Project Guide:** Prof. Komal Jadhav  
-
-**Team Members:**  
-- **Sarvesh Joshi** (Roll: A20)  
-- **Anil Kale** (Roll: A22)  
-- **Akash Kore** (Roll: A28)  
-- **Abhijay Tendolkar** (Roll: A68)  
+4. The site is live at: [https://sarveshjoshi242.github.io/krishi-aadhar-website/](https://sarveshjoshi242.github.io/krishi-aadhar-website/)
 
 ---
 

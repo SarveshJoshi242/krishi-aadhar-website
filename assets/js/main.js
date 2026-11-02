@@ -1,5 +1,5 @@
 /**
- * Krishi-Aadhar Flagship Website Script
+ * Krishi-Aadhar Flagship Website Script (Light Theme Edition)
  * Interactive Modules: AI Disease Doctor, NPK Fertilizer Calculator, Mandi Tracker, Voice Assistant, QR Generator
  */
 
@@ -22,10 +22,12 @@ function initNavbar() {
   const mobileMenu = document.getElementById('mobile-menu');
 
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
-      nav.classList.add('shadow-xl', 'bg-[#0f1715]/95', 'border-emerald-500/30');
+    if (window.scrollY > 30) {
+      nav.classList.add('shadow-md', 'bg-white/95', 'border-slate-200/90');
+      nav.classList.remove('bg-white/80', 'border-slate-200/50');
     } else {
-      nav.classList.remove('shadow-xl', 'bg-[#0f1715]/95', 'border-emerald-500/30');
+      nav.classList.remove('shadow-md', 'bg-white/95', 'border-slate-200/90');
+      nav.classList.add('bg-white/80', 'border-slate-200/50');
     }
   });
 
@@ -148,14 +150,17 @@ function initDiseaseDoctor() {
   const sampleBtns = document.querySelectorAll('.disease-sample-btn');
   const resultCard = document.getElementById('disease-result');
   const scannerAnimation = document.getElementById('scanner-animation');
-  const sampleLeafImg = document.getElementById('sample-leaf-preview');
 
   if (!sampleBtns.length || !resultCard) return;
 
   sampleBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      sampleBtns.forEach(b => b.classList.remove('active', 'border-emerald-400', 'bg-emerald-950/60'));
-      btn.classList.add('active', 'border-emerald-400', 'bg-emerald-950/60');
+      sampleBtns.forEach(b => {
+        b.classList.remove('active', 'border-emerald-600', 'bg-emerald-50', 'text-emerald-800', 'shadow-sm');
+        b.classList.add('border-slate-200', 'bg-white', 'text-slate-700');
+      });
+      btn.classList.add('active', 'border-emerald-600', 'bg-emerald-50', 'text-emerald-800', 'shadow-sm');
+      btn.classList.remove('border-slate-200', 'bg-white', 'text-slate-700');
 
       const cropKey = btn.dataset.crop;
       const data = sampleDiseases[cropKey];
@@ -182,7 +187,7 @@ function initDiseaseDoctor() {
         document.getElementById('res-organic').textContent = data.organic;
         document.getElementById('res-cost').textContent = data.cost;
         document.getElementById('res-phi').textContent = data.phi;
-      }, 700);
+      }, 500);
     });
   });
 }
@@ -235,15 +240,15 @@ function initFertilizerCalculator() {
 
     // Soil amendment check
     let amendmentText = "Soil pH is in optimal balanced range (6.5 – 7.8). No chemical amendment needed.";
-    let amendmentClass = "text-emerald-400";
+    let amendmentClass = "text-emerald-800 bg-emerald-50 border-emerald-200";
     if (ph < 6.5) {
       const limeKg = Math.round((6.5 - ph) * 400 * acres);
       amendmentText = `⚠️ Acidic Soil detected (pH ${ph}). Recommend Agricultural Lime (CaCO₃) @ ${limeKg} kg to neutralize acidity before fertilizer application.`;
-      amendmentClass = "text-amber-400";
+      amendmentClass = "text-amber-800 bg-amber-50 border-amber-200";
     } else if (ph > 7.8) {
       const gypsumKg = Math.round((ph - 7.5) * 500 * acres);
       amendmentText = `⚠️ Alkaline/Saline Soil detected (pH ${ph}). Recommend Agricultural Gypsum (CaSO₄·2H₂O) @ ${gypsumKg} kg to displace excess sodium.`;
-      amendmentClass = "text-amber-400";
+      amendmentClass = "text-amber-800 bg-amber-50 border-amber-200";
     }
 
     // Render results
@@ -262,7 +267,7 @@ function initFertilizerCalculator() {
 
     const amendEl = document.getElementById('res-ph-amendment');
     amendEl.textContent = amendmentText;
-    amendEl.className = `text-sm font-medium ${amendmentClass}`;
+    amendEl.className = `p-4 rounded-xl text-sm font-medium border ${amendmentClass}`;
   }
 
   calculateBtn.addEventListener('click', calculate);
@@ -292,25 +297,25 @@ function initMandiTracker() {
   function renderTable(items) {
     container.innerHTML = '';
     if (!items.length) {
-      container.innerHTML = `<tr><td colspan="6" class="text-center py-6 text-slate-400">No matching commodity or mandi found.</td></tr>`;
+      container.innerHTML = `<tr><td colspan="6" class="text-center py-6 text-slate-500 font-medium">No matching commodity or mandi found.</td></tr>`;
       return;
     }
 
     items.forEach(row => {
       const diffMSP = row.modal - row.msp;
       const mspBadge = diffMSP >= 0 
-        ? `<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-emerald-500/15 text-emerald-400">+₹${diffMSP} vs MSP</span>`
-        : `<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-red-500/15 text-red-400">-₹${Math.abs(diffMSP)} vs MSP</span>`;
+        ? `<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800 border border-emerald-300">+₹${diffMSP} vs MSP</span>`
+        : `<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-100 text-rose-800 border border-rose-300">-₹${Math.abs(diffMSP)} vs MSP</span>`;
 
       const tr = document.createElement('tr');
-      tr.className = 'border-b border-emerald-950/40 hover:bg-emerald-950/20 transition-colors';
+      tr.className = 'border-b border-slate-200/80 hover:bg-emerald-50/50 transition-colors';
       tr.innerHTML = `
-        <td class="py-3.5 px-4 font-semibold text-slate-200">${row.mandi}</td>
-        <td class="py-3.5 px-4 font-medium text-emerald-300">${row.commodity}</td>
-        <td class="py-3.5 px-4 text-slate-400">₹${row.min.toLocaleString('en-IN')} – ₹${row.max.toLocaleString('en-IN')}</td>
-        <td class="py-3.5 px-4 font-bold text-white text-base">₹${row.modal.toLocaleString('en-IN')} <span class="text-xs font-normal text-slate-400">/ Qtl</span></td>
+        <td class="py-3.5 px-4 font-semibold text-slate-800">${row.mandi}</td>
+        <td class="py-3.5 px-4 font-medium text-emerald-700">${row.commodity}</td>
+        <td class="py-3.5 px-4 text-slate-600 font-mono">₹${row.min.toLocaleString('en-IN')} – ₹${row.max.toLocaleString('en-IN')}</td>
+        <td class="py-3.5 px-4 font-bold text-slate-900 text-base">₹${row.modal.toLocaleString('en-IN')} <span class="text-xs font-normal text-slate-500">/ Qtl</span></td>
         <td class="py-3.5 px-4">${mspBadge}</td>
-        <td class="py-3.5 px-4 font-semibold text-emerald-400">${row.trend}</td>
+        <td class="py-3.5 px-4 font-bold text-emerald-600 font-mono">${row.trend}</td>
       `;
       container.appendChild(tr);
     });
@@ -370,8 +375,12 @@ function initVoiceAssistant() {
 
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('active', 'border-emerald-400', 'bg-emerald-950/60'));
-      tab.classList.add('active', 'border-emerald-400', 'bg-emerald-950/60');
+      tabs.forEach(t => {
+        t.classList.remove('active', 'border-emerald-600', 'bg-emerald-50', 'text-emerald-800', 'shadow-sm');
+        t.classList.add('border-slate-200', 'bg-white', 'text-slate-700');
+      });
+      tab.classList.add('active', 'border-emerald-600', 'bg-emerald-50', 'text-emerald-800', 'shadow-sm');
+      tab.classList.remove('border-slate-200', 'bg-white', 'text-slate-700');
       updateContent(tab.dataset.lang);
     });
   });
@@ -423,27 +432,23 @@ function initQRCodeModal() {
   if (!modal || !canvas) return;
 
   function generateQR() {
-    // Current APK direct link on this host
     const apkUrl = window.location.origin + window.location.pathname.replace(/\/$/, '') + '/downloads/krushi-aadhar-cloud.apk';
     
-    // Draw high quality custom QR matrix onto canvas
     const ctx = canvas.getContext('2d');
     const size = 260;
     canvas.width = size;
     canvas.height = size;
 
-    // Use free reliable SVG/PNG QR image loader into canvas
     const img = new Image();
     img.crossOrigin = 'anonymous';
-    img.src = `https://api.qrserver.com/v1/create-qr-code/?size=260x260&data=${encodeURIComponent(apkUrl)}&color=064e3b&bgcolor=ffffff&margin=1`;
+    img.src = `https://api.qrserver.com/v1/create-qr-code/?size=260x260&data=${encodeURIComponent(apkUrl)}&color=059669&bgcolor=ffffff&margin=1`;
     img.onload = () => {
       ctx.drawImage(img, 0, 0, size, size);
     };
     img.onerror = () => {
-      // Fallback clean matrix rendering
       ctx.fillStyle = '#ffffff';
       ctx.fillRect(0, 0, size, size);
-      ctx.fillStyle = '#064e3b';
+      ctx.fillStyle = '#059669';
       ctx.font = '14px sans-serif';
       ctx.textAlign = 'center';
       ctx.fillText('Scan to Download APK', size/2, size/2 - 10);
@@ -491,10 +496,10 @@ function initCopyButtons() {
       navigator.clipboard.writeText(textToCopy).then(() => {
         const originalText = btn.innerHTML;
         btn.innerHTML = `✓ Copied!`;
-        btn.classList.add('text-emerald-400');
+        btn.classList.add('text-emerald-600', 'font-bold');
         setTimeout(() => {
           btn.innerHTML = originalText;
-          btn.classList.remove('text-emerald-400');
+          btn.classList.remove('text-emerald-600', 'font-bold');
         }, 2000);
       });
     });

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Krishi-Aadhar — Modern Agritech Flagship Design System
+   Krishi-Aadhar — Modern Clean Light Agritech Design System
    ========================================================================== */
 
 :root {
@@ -13,22 +13,19 @@
   --primary-700: #047857;
   --primary-800: #065f46;
   --primary-900: #064e3b;
-  --primary-950: #022c22;
 
-  --amber-400: #fbbf24;
   --amber-500: #f59e0b;
   --amber-600: #d97706;
 
-  --dark-950: #0a0f0d;
-  --dark-900: #0f1715;
-  --dark-800: #162420;
-  --dark-700: #1f332d;
-  --dark-600: #2d4a41;
-
-  --surface-card: rgba(15, 23, 21, 0.85);
-  --surface-glass: rgba(22, 36, 32, 0.65);
-  --border-subtle: rgba(16, 185, 129, 0.18);
-  --border-glow: rgba(52, 211, 153, 0.45);
+  --bg-page: #f8fafc;
+  --surface-card: #ffffff;
+  --surface-glass: rgba(255, 255, 255, 0.85);
+  --border-subtle: #e2e8f0;
+  --border-emerald: rgba(16, 185, 129, 0.25);
+  --border-glow: rgba(5, 150, 105, 0.4);
+  --text-main: #0f172a;
+  --text-body: #334155;
+  --text-muted: #64748b;
 }
 
 /* Base & Typography */
@@ -41,57 +38,57 @@
 html {
   scroll-behavior: smooth;
   font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  color: #e2e8f0;
-  background-color: var(--dark-950);
+  color: var(--text-body);
+  background-color: var(--bg-page);
 }
 
 body {
   overflow-x: hidden;
-  background: radial-gradient(circle at 50% 0%, #064e3b33 0%, transparent 50%),
-              radial-gradient(circle at 85% 30%, #04785722 0%, transparent 40%),
-              radial-gradient(circle at 15% 70%, #065f4622 0%, transparent 40%),
-              var(--dark-950);
+  background: radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.08) 0%, transparent 55%),
+              radial-gradient(circle at 90% 20%, rgba(52, 211, 153, 0.06) 0%, transparent 40%),
+              radial-gradient(circle at 10% 60%, rgba(245, 158, 11, 0.04) 0%, transparent 40%),
+              var(--bg-page);
   background-attachment: fixed;
   line-height: 1.6;
 }
 
-/* Glassmorphism Classes */
+/* Glassmorphism Classes (Light Theme) */
 .glass-panel {
-  background: var(--surface-glass);
+  background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--border-subtle);
-  border-radius: 1rem;
+  border-radius: 1.25rem;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
 }
 
 .glass-card {
   background: var(--surface-card);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border-subtle);
-  border-radius: 0.875rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.03), 0 2px 4px -2px rgba(0, 0, 0, 0.02);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .glass-card:hover {
   border-color: var(--border-glow);
   transform: translateY(-4px);
-  box-shadow: 0 12px 30px -10px rgba(16, 185, 129, 0.2);
+  box-shadow: 0 16px 32px -8px rgba(5, 150, 105, 0.12);
 }
 
 .glow-btn {
   position: relative;
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
   color: #ffffff;
   font-weight: 600;
   border-radius: 0.75rem;
-  box-shadow: 0 0 20px rgba(16, 185, 129, 0.35);
+  box-shadow: 0 6px 18px rgba(5, 150, 105, 0.28);
   transition: all 0.3s ease;
 }
 
 .glow-btn:hover {
-  background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
-  box-shadow: 0 0 30px rgba(52, 211, 153, 0.55);
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.35);
   transform: translateY(-2px);
 }
 
@@ -102,21 +99,15 @@ body {
   gap: 0.5rem;
   padding: 0.4rem 1rem;
   border-radius: 9999px;
-  background: rgba(16, 185, 129, 0.12);
-  border: 1px solid rgba(52, 211, 153, 0.3);
-  color: #a7f3d0;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(5, 150, 105, 0.25);
+  color: #047857;
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .hero-gradient-text {
-  background: linear-gradient(135deg, #ffffff 20%, #a7f3d0 60%, #34d399 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.amber-gradient-text {
-  background: linear-gradient(135deg, #fef3c7 20%, #f59e0b 80%);
+  background: linear-gradient(135deg, #0f172a 30%, #059669 80%, #10b981 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -124,28 +115,28 @@ body {
 /* Phone Mockup Frame */
 .phone-mockup-wrapper {
   position: relative;
-  max-width: 330px;
+  max-width: 320px;
   margin: 0 auto;
 }
 
 .phone-mockup {
   position: relative;
-  border: 10px solid #1f2937;
+  border: 10px solid #1e293b;
   border-radius: 40px;
   overflow: hidden;
-  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.7),
-              0 0 40px rgba(16, 185, 129, 0.25);
-  background: #000;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.18),
+              0 0 30px rgba(5, 150, 105, 0.15);
+  background: #ffffff;
 }
 
 .phone-speaker {
   position: absolute;
-  top: 12px;
+  top: 10px;
   left: 50%;
   transform: translateX(-50%);
-  width: 60px;
+  width: 55px;
   height: 4px;
-  background: #374151;
+  background: #475569;
   border-radius: 4px;
   z-index: 20;
 }
@@ -160,18 +151,18 @@ body {
 .floating-metric {
   position: absolute;
   padding: 0.75rem 1rem;
-  background: rgba(15, 23, 21, 0.92);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
-  border: 1px solid var(--border-glow);
+  border: 1px solid rgba(5, 150, 105, 0.2);
   border-radius: 0.875rem;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 12px 25px -4px rgba(0, 0, 0, 0.08);
   animation: float 4s ease-in-out infinite alternate;
   z-index: 30;
 }
 
 @keyframes float {
   0% { transform: translateY(0px); }
-  100% { transform: translateY(-10px); }
+  100% { transform: translateY(-8px); }
 }
 
 .floating-metric-1 {
@@ -196,7 +187,7 @@ body {
 
 .audio-bar {
   width: 3px;
-  background: #10b981;
+  background: #059669;
   border-radius: 3px;
   height: 6px;
   transition: height 0.2s ease;
@@ -213,51 +204,20 @@ body {
   50% { height: 22px; }
 }
 
-/* Feature Tabs */
-.tab-btn {
-  padding: 0.75rem 1.25rem;
-  font-weight: 600;
-  font-size: 0.95rem;
-  color: #94a3b8;
-  border-radius: 0.75rem;
-  border: 1px solid transparent;
-  transition: all 0.2s ease;
-  cursor: pointer;
-  background: transparent;
-}
-
-.tab-btn:hover {
-  color: #f1f5f9;
-  background: rgba(16, 185, 129, 0.08);
-}
-
-.tab-btn.active {
-  color: #34d399;
-  background: rgba(16, 185, 129, 0.15);
-  border-color: rgba(52, 211, 153, 0.35);
-  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.15);
-}
-
-/* Code Snippets */
-pre code {
-  font-family: 'JetBrains Mono', Consolas, Monaco, monospace;
-  font-size: 0.875rem;
-}
-
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0a0f0d;
+  background: #f1f5f9;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1f332d;
+  background: #cbd5e1;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #34d399;
+  background: #10b981;
 }
 
 /* Scanner Laser Animation */
@@ -267,8 +227,8 @@ pre code {
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, transparent, #34d399, transparent);
-  box-shadow: 0 0 15px #34d399;
+  background: linear-gradient(90deg, transparent, #059669, transparent);
+  box-shadow: 0 0 12px #10b981;
   animation: scan 2s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
 }
 
