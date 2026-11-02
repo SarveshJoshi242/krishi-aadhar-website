@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Krishi-Aadhar — Smart Agriculture & AI Crop Management Platform</title>
+  <meta name="description" content="Official website and APK download for Krishi-Aadhar (कृषी आधार / शेतकरी आधार). Empowering farmers with AI-driven plant disease diagnostics, live APMC Mandi rates, soil health NPK calculators, multilingual voice assistant, and decentralized farm commerce.">
+  <meta name="keywords" content="Krishi Aadhar, Krushi Aadhar, AI Crop Management, Plant Disease Detection, MobileNetV3, Gemini AI, APMC Mandi Prices, Soil Health NPK Calculator, Agriculture App Android">
+  <meta name="author" content="Sarvesh Joshi, Anil Kale, Akash Kore, Abhijay Tendolkar">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Krishi-Aadhar — Next-Gen AI Agro-Ecosystem for Bharat">
+  <meta property="og:description" content="Download the Krishi-Aadhar Android App. AI disease diagnostics, live Mandi rates, soil health calculators, and multilingual voice assistant.">
+  <meta property="og:image" content="assets/images/krishi_aadhar_ai_presentation_poster.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌾</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#ecfdf5',
+              100: '#d1fae5',
+              200: '#a7f3d0',
+              300: '#6ee7b7',
+              400: '#34d399',
+              500: '#10b981',
+              600: '#059669',
+              700: '#047857',
+              800: '#065f46',
+              900: '#064e3b',
+              950: '#022c22',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- KaTeX for Mathematical Proofs -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+          onload="renderMathInElement(document.body);"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-[#0a0f0d] text-slate-200 antialiased selection:bg-emerald-500 selection:text-white">
+
+  <!-- ==========================================================================
+       1. Top Notification Bar & Sticky Header
+       ========================================================================== -->
+  <header id="main-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-emerald-950/60 bg-[#0a0f0d]/90 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo -->
+        <a href="#hero" class="flex items-center gap-3 group">
+          <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-400 flex items-center justify-center text-2xl shadow-lg shadow-emerald-500/25 group-hover:scale-105 transition-transform">
+            🌾
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="text-xl font-extrabold tracking-tight text-white group-hover:text-emerald-400 transition-colors">Krishi-Aadhar</span>
+              <span class="text-xs px-2 py-0.5 rounded-full font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">v1.0 Cloud</span>
+            </div>
+            <p class="text-[11px] text-slate-400 font-medium">कृषी आधार • शेतकरी आधार</p>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+          <a href="#features" class="text-slate-300 hover:text-emerald-400 transition-colors">Features</a>
+          <a href="#disease-doctor" class="text-slate-300 hover:text-emerald-400 transition-colors">AI Doctor</a>
+          <a href="#npk-calculator" class="text-slate-300 hover:text-emerald-400 transition-colors">NPK Calculator</a>
+          <a href="#mandi-tracker" class="text-slate-300 hover:text-emerald-400 transition-colors">Live Mandi</a>
+          <a href="#architecture" class="text-slate-300 hover:text-emerald-400 transition-colors">Deep Architecture</a>
+          <a href="#screenshots" class="text-slate-300 hover:text-emerald-400 transition-colors">App Gallery</a>
+        </nav>
+
+        <!-- Right Action Buttons -->
+        <div class="hidden sm:flex items-center gap-4">
+          <a href="https://github.com/SarveshJoshi242/krushi-sarthi" target="_blank" rel="noopener" class="p-2.5 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800/60 transition-colors" title="GitHub Repository">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="#download" class="glow-btn px-5 py-2.5 text-sm flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+            <span>Download APK</span>
+            <span class="text-[11px] bg-black/25 px-1.5 py-0.5 rounded font-mono">27 MB</span>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-400 hover:text-white" aria-label="Toggle menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-6 space-y-3 bg-[#0a0f0d] border-b border-emerald-950/80">
+      <a href="#features" class="block px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-900">Features</a>
+      <a href="#disease-doctor" class="block px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-900">AI Doctor</a>
+      <a href="#npk-calculator" class="block px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-900">NPK Calculator</a>
+      <a href="#mandi-tracker" class="block px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-900">Live Mandi</a>
+      <a href="#architecture" class="block px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-900">Architecture</a>
+      <a href="#screenshots" class="block px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-900">Screenshots</a>
+      <a href="#download" class="block px-3 py-2.5 rounded-lg text-center font-bold bg-emerald-600 text-white">Download APK (27.1 MB)</a>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       2. Hero Section
+       ========================================================================== -->
+  <section id="hero" class="relative pt-36 pb-20 md:pt-44 md:pb-32 overflow-hidden">
+    <!-- Glow Orbs -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-emerald-500/10 blur-[130px] rounded-full pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Left Hero Content -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          
+          <div class="inline-flex items-center gap-2 hero-badge">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span>🌱 Empowering Indian Agriculture with Next-Gen AI</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15] text-white">
+            Smart Crop Intelligence <br>
+            <span class="hero-gradient-text">& Decentralized Trade</span>
+          </h1>
+
+          <p class="text-lg sm:text-xl text-slate-300 max-w-2xl font-normal leading-relaxed mx-auto lg:mx-0">
+            <strong>Krishi-Aadhar</strong> connects smallholder farmers directly to modern agronomy: instant <strong class="text-emerald-400">MobileNetV3 leaf disease diagnosis</strong> with CIBRC remedies, <strong class="text-emerald-400">live APMC mandi rates</strong> with MSP tracking, soil NPK calculators, multilingual voice assistance (मराठी, हिंदी, English), and live peer-to-peer marketplace chat.
+          </p>
+
+          <!-- Cloud Status Live Indicators -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-2 text-xs font-mono text-slate-400">
+            <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-950/40 border border-emerald-900/60">
+              <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+              <span>FastAPI ML Microservice: Live</span>
+            </div>
+            <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-950/40 border border-emerald-900/60">
+              <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+              <span>Neon Cloud PostgreSQL: Online</span>
+            </div>
+            <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-950/40 border border-emerald-900/60">
+              <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+              <span>Google Gemini 2.0 Flash: Active</span>
+            </div>
+          </div>
+
+          <!-- Hero Action CTAs -->
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+            <a href="downloads/krushi-aadhar-cloud.apk" download="krushi-aadhar-cloud.apk" class="w-full sm:w-auto glow-btn px-7 py-4 text-base flex items-center justify-center gap-3">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+              <span>Download Android APK</span>
+              <span class="text-xs bg-black/30 px-2 py-0.5 rounded font-mono font-medium">v1.0 • 27.1 MB</span>
+            </a>
+            
+            <button class="open-qr-btn w-full sm:w-auto px-6 py-4 rounded-xl border border-slate-700 bg-slate-900/80 hover:bg-slate-800 text-slate-200 text-base font-semibold flex items-center justify-center gap-2 transition-all">
+              <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"/></svg>
+              <span>Scan QR on Mobile</span>
+            </button>
+          </div>
+
+          <div class="text-xs text-slate-400 flex items-center justify-center lg:justify-start gap-4 pt-1">
+            <span>✓ Android 7.0 (API 24) to Android 14+</span>
+            <span>•</span>
+            <span>✓ No Google Play required</span>
+            <span>•</span>
+            <span>✓ Cloud API pre-configured</span>
+          </div>
+
+        </div>
+
+        <!-- Right Hero Mockup Frame -->
+        <div class="lg:col-span-5 relative flex justify-center">
+          <div class="phone-mockup-wrapper">
+            
+            <!-- Floating Metric 1 -->
+            <div class="floating-metric floating-metric-1">
+              <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-sm">
+                  ⚡
+                </div>
+                <div>
+                  <div class="text-xs font-bold text-white">98.6% Accuracy</div>
+                  <div class="text-[10px] text-slate-400">MobileNetV3 + 39 Disease Classes</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Phone Frame -->
+            <div class="phone-mockup">
+              <div class="phone-speaker"></div>
+              <img src="assets/images/screen_home_farmtools.png" alt="Krishi-Aadhar Android Home Screen" class="phone-screen" loading="lazy">
+            </div>
+
+            <!-- Floating Metric 2 -->
+            <div class="floating-metric floating-metric-2">
+              <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center text-sm">
+                  📈
+                </div>
+                <div>
+                  <div class="text-xs font-bold text-white">Live APMC Mandi</div>
+                  <div class="text-[10px] text-slate-400">Real-time modal prices & MSP comparison</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       3. Feature Grid Overview (Key Innovations)
+       ========================================================================== -->
+  <section id="features" class="py-24 border-t border-emerald-950/40 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+        <h2 class="text-xs font-bold uppercase tracking-wider text-emerald-400">End-to-End Agri Ecosystem</h2>
+        <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Engineered for Bharat’s Agricultural Reality</h3>
+        <p class="text-slate-400 text-base">From plant pathology to decentralized trade, Krishi-Aadhar solves real operational bottlenecks faced by farmers on the ground.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Card 1: AI Disease Doctor -->
+        <div class="glass-card p-7 space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center text-2xl">
+            🔬
+          </div>
+          <h4 class="text-xl font-bold text-white">AI Pest & Disease Doctor</h4>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Snap a photo of leaf symptoms. Our custom-trained MobileNetV3Large CNN identifies 39 disease classes with 98.6% accuracy, paired with Google Gemini 2.0 Flash for biological descriptions.
+          </p>
+          <ul class="text-xs text-slate-300 space-y-2 pt-2 border-t border-emerald-950">
+            <li class="flex items-center gap-2">✓ CIBRC approved chemical prescriptions</li>
+            <li class="flex items-center gap-2">✓ Low-cost organic remedies (Neem, Trichoderma)</li>
+            <li class="flex items-center gap-2">✓ Strict 70% confidence gating safety threshold</li>
+          </ul>
+        </div>
+
+        <!-- Card 2: Multilingual Voice Assistant -->
+        <div class="glass-card p-7 space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-teal-500/10 border border-teal-500/20 text-teal-400 flex items-center justify-center text-2xl">
+            🎙️
+          </div>
+          <h4 class="text-xl font-bold text-white">Multilingual Voice AI</h4>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Built for rural accessibility. Farmers speak naturally in Marathi, Hindi, or English. The assistant transcribes queries, processes agronomic context, and responds via localized Text-To-Speech (TTS).
+          </p>
+          <ul class="text-xs text-slate-300 space-y-2 pt-2 border-t border-emerald-950">
+            <li class="flex items-center gap-2">✓ Marathi (शेतकरी संवाद), Hindi, English</li>
+            <li class="flex items-center gap-2">✓ Animated voice visualizer & prompt chips</li>
+            <li class="flex items-center gap-2">✓ Instant agronomic advice & price lookup</li>
+          </ul>
+        </div>
+
+        <!-- Card 3: Mandi Tracker & MSP -->
+        <div class="glass-card p-7 space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center text-2xl">
+            📊
+          </div>
+          <h4 class="text-xl font-bold text-white">Live APMC Mandi & MSP</h4>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Eliminate middleman exploitation. Access real-time commodity prices from major agricultural mandis (Kolhapur, Pune, Nashik, etc.) with automated Government Minimum Support Price (MSP) comparisons.
+          </p>
+          <ul class="text-xs text-slate-300 space-y-2 pt-2 border-t border-emerald-950">
+            <li class="flex items-center gap-2">✓ Real-time Min, Max, Modal price tracking</li>
+            <li class="flex items-center gap-2">✓ Benchmark comparison vs official MSP rates</li>
+            <li class="flex items-center gap-2">✓ 7-Day market trend indicators (Bullish/Bearish)</li>
+          </ul>
+        </div>
+
+        <!-- Card 4: Soil Health & NPK Calculator -->
+        <div class="glass-card p-7 space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-green-500/10 border border-green-500/20 text-green-400 flex items-center justify-center text-2xl">
+            🧪
+          </div>
+          <h4 class="text-xl font-bold text-white">Soil Health & NPK Calculator</h4>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Input soil test results or target acreage. Calculates exact 50kg bag requirements of Urea, DAP, and MOP, alongside agricultural lime/gypsum soil amendments and 3-stage split schedules.
+          </p>
+          <ul class="text-xs text-slate-300 space-y-2 pt-2 border-t border-emerald-950">
+            <li class="flex items-center gap-2">✓ Converts NPK kg/ha into commercial 50kg bags</li>
+            <li class="flex items-center gap-2">✓ Acidic / alkaline pH balance amendments</li>
+            <li class="flex items-center gap-2">✓ Basal, vegetative, and flowering split schedules</li>
+          </ul>
+        </div>
+
+        <!-- Card 5: Decentralized P2P Marketplace -->
+        <div class="glass-card p-7 space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center text-2xl">
+            🤝
+          </div>
+          <h4 class="text-xl font-bold text-white">Decentralized Trade & Chat</h4>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Direct farmer-to-buyer commerce. Features mathematical Haversine GPS radius filtering for localized farm pickups and bidirectional Spring STOMP WebSocket chat for private price negotiation.
+          </p>
+          <ul class="text-xs text-slate-300 space-y-2 pt-2 border-t border-emerald-950">
+            <li class="flex items-center gap-2">✓ Live WebSocket messaging with unread badges</li>
+            <li class="flex items-center gap-2">✓ Exact field-to-buyer road distance calculations</li>
+            <li class="flex items-center gap-2">✓ Zero middleman commission cuts</li>
+          </ul>
+        </div>
+
+        <!-- Card 6: Offline-First & Native Reports -->
+        <div class="glass-card p-7 space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center text-2xl">
+            📄
+          </div>
+          <h4 class="text-xl font-bold text-white">One-Click PDF Reports</h4>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Generate professional A4 printable diagnosis reports and financial passbooks directly on device using Android's native graphics engine without needing third-party cloud generators.
+          </p>
+          <ul class="text-xs text-slate-300 space-y-2 pt-2 border-t border-emerald-950">
+            <li class="flex items-center gap-2">✓ A4 PDF with high-res leaf scans & prescriptions</li>
+            <li class="flex items-center gap-2">✓ Offline Room SQLite database caching</li>
+            <li class="flex items-center gap-2">✓ Government schemes & subsidy guidance</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       4. Interactive AI Disease Doctor Simulator
+       ========================================================================== -->
+  <section id="disease-doctor" class="py-24 bg-gradient-to-b from-[#0a0f0d] via-[#0f1715] to-[#0a0f0d] border-t border-emerald-950/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-4 mb-14">
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Live Interactive Demonstration</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Try the AI Disease Doctor Simulator</h2>
+        <p class="text-slate-400 text-base">Select any sample infected crop leaf to observe real-time AI inference, confidence scores, and ICAR/CIBRC approved treatment guidelines.</p>
+      </div>
+
+      <!-- Sample Leaf Buttons -->
+      <div class="flex flex-wrap items-center justify-center gap-3 mb-10">
+        <button class="disease-sample-btn active px-4 py-2.5 rounded-xl border border-emerald-400 bg-emerald-950/60 text-sm font-semibold text-white flex items-center gap-2 transition-all" data-crop="tomato">
+          <span>🍅</span> Tomato Early Blight
+        </button>
+        <button class="disease-sample-btn px-4 py-2.5 rounded-xl border border-emerald-900/60 bg-slate-900/60 text-sm font-semibold text-slate-300 hover:border-emerald-500/50 flex items-center gap-2 transition-all" data-crop="potato">
+          <span>🥔</span> Potato Late Blight
+        </button>
+        <button class="disease-sample-btn px-4 py-2.5 rounded-xl border border-emerald-900/60 bg-slate-900/60 text-sm font-semibold text-slate-300 hover:border-emerald-500/50 flex items-center gap-2 transition-all" data-crop="cotton">
+          <span>🌾</span> Cotton Leaf Curl
+        </button>
+        <button class="disease-sample-btn px-4 py-2.5 rounded-xl border border-emerald-900/60 bg-slate-900/60 text-sm font-semibold text-slate-300 hover:border-emerald-500/50 flex items-center gap-2 transition-all" data-crop="rice">
+          <span>🌾</span> Rice Bacterial Blight
+        </button>
+        <button class="disease-sample-btn px-4 py-2.5 rounded-xl border border-emerald-900/60 bg-slate-900/60 text-sm font-semibold text-slate-300 hover:border-emerald-500/50 flex items-center gap-2 transition-all" data-crop="sugarcane">
+          <span>🎋</span> Sugarcane Red Rot
+        </button>
+        <button class="disease-sample-btn px-4 py-2.5 rounded-xl border border-emerald-900/60 bg-slate-900/60 text-sm font-semibold text-slate-300 hover:border-emerald-500/50 flex items-center gap-2 transition-all" data-crop="chilli">
+          <span>🌶️</span> Chilli Anthracnose
+        </button>
+      </div>
+
+      <!-- Simulator Output Card -->
+      <div class="glass-panel p-6 sm:p-10 relative overflow-hidden max-w-5xl mx-auto border-emerald-500/30">
+        
+        <!-- Laser Scanner Effect -->
+        <div id="scanner-animation" class="hidden">
+          <div class="scanner-laser"></div>
+        </div>
+
+        <div id="disease-result" class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start transition-opacity duration-300">
+          
+          <!-- Diagnosis Left Panel -->
+          <div class="lg:col-span-5 space-y-5 bg-[#0a0f0d]/80 p-6 rounded-xl border border-emerald-950">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono text-slate-400">MODEL: MobileNetV3Large</span>
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">VALID DIAGNOSIS</span>
+            </div>
+
+            <div>
+              <div class="text-xs text-slate-400 font-medium">DETECTED CROP & SPECIMEN</div>
+              <div id="res-crop" class="text-xl font-bold text-white">Tomato (टमाटर / टोमॅटो)</div>
+            </div>
+
+            <div>
+              <div class="text-xs text-slate-400 font-medium">CONFIRMED PATHOLOGY</div>
+              <div id="res-disease" class="text-2xl font-extrabold text-emerald-400">Early Blight (करपा / अगेती झुलसा)</div>
+              <div id="res-pathogen" class="text-xs text-slate-400 font-mono mt-0.5">Alternaria solani (Fungal)</div>
+            </div>
+
+            <div class="pt-2 border-t border-emerald-950">
+              <div class="flex items-center justify-between text-xs font-semibold mb-1.5">
+                <span class="text-slate-300">Inference Confidence</span>
+                <span id="res-confidence" class="text-emerald-400 font-mono">98.6%</span>
+              </div>
+              <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
+                <div class="bg-gradient-to-r from-teal-400 to-emerald-500 h-2.5 rounded-full transition-all duration-500" style="width: 98.6%;"></div>
+              </div>
+              <div class="text-[11px] text-slate-400 mt-1.5">Gated against 70% minimum medical safety threshold</div>
+            </div>
+
+            <div class="pt-2 border-t border-emerald-950">
+              <div class="text-xs text-slate-400 font-medium">VISUAL SYMPTOMATOLOGY</div>
+              <p id="res-symptoms" class="text-xs text-slate-300 mt-1 leading-relaxed">
+                Concentric dark brown rings ("bullseye" target spots) on lower older foliage surrounded by chlorotic yellow halo.
+              </p>
+            </div>
+          </div>
+
+          <!-- Prescription Right Panel -->
+          <div class="lg:col-span-7 space-y-6">
+            <div>
+              <h4 class="text-lg font-bold text-white flex items-center gap-2">
+                <span class="text-emerald-400">💊</span> Approved Agronomic Prescription
+              </h4>
+              <p class="text-xs text-slate-400">Strictly deterministic dosages vetted via ICAR & CIBRC standards (never unverified hallucinations).</p>
+            </div>
+
+            <!-- Chemical Prescription Box -->
+            <div class="p-5 rounded-xl bg-slate-900/70 border border-slate-800 space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Chemical Treatment</span>
+                <span id="res-phi" class="text-[11px] font-mono text-slate-400">Safety harvest interval: 7 days</span>
+              </div>
+              <div class="text-sm font-semibold text-white" id="res-medicine">
+                Mancozeb 75% WP or Azoxystrobin 18.2% + Difenoconazole 11.4% SC
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs pt-1">
+                <div>
+                  <span class="text-slate-400">Commercial Brand:</span>
+                  <div class="font-medium text-slate-200" id="res-brand">Ridomil Gold / Amistar Top</div>
+                </div>
+                <div>
+                  <span class="text-slate-400">Recommended Dilution:</span>
+                  <div class="font-medium text-slate-200" id="res-dosage">2.0 - 2.5 g per Liter of water</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Organic / Bio-agent Box -->
+            <div class="p-5 rounded-xl bg-emerald-950/30 border border-emerald-900/50 space-y-2">
+              <div class="text-xs font-bold text-emerald-400 uppercase tracking-wider">Eco-Friendly & Organic Alternative</div>
+              <div class="text-sm font-medium text-slate-200" id="res-organic">
+                Trichoderma viride @ 5g/L + Cold-pressed Neem Oil (1500 ppm) @ 3ml/L
+              </div>
+              <div class="text-xs text-slate-400">Safe for beneficial pollinators, preserves natural soil micro-flora.</div>
+            </div>
+
+            <!-- Cost & Action -->
+            <div class="flex flex-col sm:flex-row items-center justify-between p-4 rounded-xl bg-black/40 border border-emerald-950 gap-4">
+              <div>
+                <div class="text-xs text-slate-400">ESTIMATED TREATMENT COST</div>
+                <div class="text-xl font-bold text-white" id="res-cost">₹320 - ₹480 per Acre</div>
+              </div>
+              <a href="downloads/krushi-aadhar-cloud.apk" download="krushi-aadhar-cloud.apk" class="w-full sm:w-auto px-4 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold flex items-center justify-center gap-2 transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                <span>Diagnose Your Field in App</span>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       5. Soil Health NPK & 50kg Fertilizer Calculator
+       ========================================================================== -->
+  <section id="npk-calculator" class="py-24 border-t border-emerald-950/40 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Agronomic Precision Tools</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Soil Health NPK & 50kg Bag Calculator</h2>
+        <p class="text-slate-400 text-base">Over-fertilization poisons groundwater and wastes thousands of rupees. Calculate your exact crop nutrient balance in commercial 50kg fertilizer bags.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Calculator Inputs -->
+        <div class="lg:col-span-5 glass-card p-6 sm:p-8 space-y-6">
+          <h3 class="text-lg font-bold text-white border-b border-emerald-950 pb-3 flex items-center gap-2">
+            <span>⚙️</span> Farm Parameters
+          </h3>
+
+          <!-- Crop Selection -->
+          <div>
+            <label for="calc-crop" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Target Crop</label>
+            <select id="calc-crop" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white font-medium focus:border-emerald-500 focus:outline-none transition-colors">
+              <option value="sugarcane">Sugarcane (ऊस / गन्ना)</option>
+              <option value="cotton">Cotton (कापूस / कपास)</option>
+              <option value="wheat">Wheat (गहू / गेहूं)</option>
+              <option value="rice">Rice / Paddy (भात / धान)</option>
+              <option value="tomato">Tomato (टोमॅटो / टमाटर)</option>
+              <option value="corn">Corn / Maize (मका / मक्का)</option>
+            </select>
+          </div>
+
+          <!-- Farm Size (Acres) -->
+          <div>
+            <label for="calc-acres" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Cultivation Land (Acres)</label>
+            <input type="number" id="calc-acres" value="2" min="0.5" max="50" step="0.5" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white font-medium focus:border-emerald-500 focus:outline-none transition-colors">
+          </div>
+
+          <!-- Soil Fertility Level -->
+          <div>
+            <label for="calc-soil-status" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Soil Health Card Status</label>
+            <select id="calc-soil-status" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white font-medium focus:border-emerald-500 focus:outline-none transition-colors">
+              <option value="1.2">Low Fertility Soil (+20% booster required)</option>
+              <option value="1.0" selected>Medium / Balanced Soil (Standard RDF)</option>
+              <option value="0.8">High Fertility Soil (-20% conservation dose)</option>
+            </select>
+          </div>
+
+          <!-- Soil pH -->
+          <div>
+            <label for="calc-ph" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Soil pH Value (Normal: 6.5 – 7.8)</label>
+            <input type="number" id="calc-ph" value="7.2" min="4.0" max="10.0" step="0.1" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white font-medium focus:border-emerald-500 focus:outline-none transition-colors">
+          </div>
+
+          <button id="calc-btn" class="w-full glow-btn py-3.5 text-sm font-bold flex items-center justify-center gap-2">
+            <span>Calculate Bag Requirements</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+
+        <!-- Calculator Output Display -->
+        <div class="lg:col-span-7 glass-panel p-6 sm:p-8 space-y-6 border-emerald-500/25">
+          <div class="flex items-center justify-between border-b border-emerald-950 pb-3">
+            <h3 class="text-lg font-bold text-white flex items-center gap-2">
+              <span>📋</span> Prescribed 50kg Fertilizer Bags
+            </h3>
+            <span class="text-xs font-mono text-emerald-400 font-semibold" id="res-fert-cost">₹14,830 Total</span>
+          </div>
+
+          <!-- Bag Breakdown Cards -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            
+            <!-- Urea Card -->
+            <div class="p-5 rounded-xl bg-slate-900/80 border border-slate-800 text-center space-y-1">
+              <span class="text-xs font-bold text-emerald-400 uppercase tracking-wider">UREA (46% N)</span>
+              <div id="res-urea-bags" class="text-3xl font-extrabold text-white">11 Bags</div>
+              <div id="res-urea-kg" class="text-xs text-slate-400 font-mono">(550 kg total)</div>
+              <div class="text-[10px] text-slate-400 pt-1">Nitrogen leaf & shoot booster</div>
+            </div>
+
+            <!-- DAP Card -->
+            <div class="p-5 rounded-xl bg-slate-900/80 border border-slate-800 text-center space-y-1">
+              <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">DAP (18-46-0)</span>
+              <div id="res-dap-bags" class="text-3xl font-extrabold text-white">5 Bags</div>
+              <div id="res-dap-kg" class="text-xs text-slate-400 font-mono">(250 kg total)</div>
+              <div class="text-[10px] text-slate-400 pt-1">Phosphorus root architect</div>
+            </div>
+
+            <!-- MOP Card -->
+            <div class="p-5 rounded-xl bg-slate-900/80 border border-slate-800 text-center space-y-1">
+              <span class="text-xs font-bold text-teal-400 uppercase tracking-wider">MOP (60% K₂O)</span>
+              <div id="res-mop-bags" class="text-3xl font-extrabold text-white">4 Bags</div>
+              <div id="res-mop-kg" class="text-xs text-slate-400 font-mono">(200 kg total)</div>
+              <div class="text-[10px] text-slate-400 pt-1">Potash immunity & yield grain</div>
+            </div>
+
+          </div>
+
+          <!-- 3-Stage Split Schedule -->
+          <div class="p-5 rounded-xl bg-slate-900/50 border border-emerald-950 space-y-2">
+            <div class="text-xs font-bold text-white uppercase tracking-wider flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-emerald-400"></span> 3-Stage Application Timeline
+            </div>
+            <p id="res-schedule-text" class="text-xs text-slate-300 leading-relaxed font-mono">
+              Basal (15%), 30-45 Days (35%), Earthing Up 90 Days (50%)
+            </p>
+            <p class="text-[11px] text-slate-400">Never apply 100% Nitrogen at sowing to prevent leaching and volatilization losses.</p>
+          </div>
+
+          <!-- Soil pH & Amendments -->
+          <div class="p-5 rounded-xl bg-black/40 border border-emerald-950 space-y-2">
+            <div class="text-xs font-bold text-slate-300 uppercase tracking-wider">pH Soil Amendment Status</div>
+            <p id="res-ph-amendment" class="text-sm font-medium text-emerald-400">
+              Soil pH is in optimal balanced range (6.5 – 7.8). No chemical amendment needed.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       6. Live APMC Mandi Price Tracker
+       ========================================================================== -->
+  <section id="mandi-tracker" class="py-24 bg-gradient-to-b from-[#0a0f0d] via-[#0f1715] to-[#0a0f0d] border-t border-emerald-950/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Real-Time Market Intelligence</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Live APMC Mandi Rates & MSP Benchmark</h2>
+          <p class="text-slate-400 text-sm mt-1">Track actual agricultural wholesale prices from Maharashtra APMCs compared with official Government MSP.</p>
+        </div>
+
+        <div class="w-full md:w-72">
+          <input type="text" id="mandi-search" placeholder="Search Mandi or Commodity..." class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-sm text-white placeholder-slate-500 focus:border-emerald-500 focus:outline-none">
+        </div>
+      </div>
+
+      <!-- Mandi Table Container -->
+      <div class="glass-panel overflow-hidden border-emerald-950/80">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-sm">
+            <thead class="bg-slate-900/90 text-xs uppercase tracking-wider text-slate-400 border-b border-emerald-950">
+              <tr>
+                <th class="py-4 px-4 font-semibold">APMC Mandi</th>
+                <th class="py-4 px-4 font-semibold">Commodity</th>
+                <th class="py-4 px-4 font-semibold">Price Range (Min - Max)</th>
+                <th class="py-4 px-4 font-semibold">Modal Price</th>
+                <th class="py-4 px-4 font-semibold">MSP Difference</th>
+                <th class="py-4 px-4 font-semibold">7-Day Trend</th>
+              </tr>
+            </thead>
+            <tbody id="mandi-table-body" class="divide-y divide-emerald-950/30">
+              <!-- Rendered dynamically by main.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="mt-4 flex flex-wrap items-center justify-between text-xs text-slate-400 px-2">
+        <span>Data verified against National APMC Network & Maharashtra State Agricultural Marketing Board (MSAMB).</span>
+        <span class="text-emerald-400 font-mono">30-Minute Dynamic Cache</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       7. Multilingual Voice Assistant Showcase
+       ========================================================================== -->
+  <section id="voice-assistant" class="py-24 border-t border-emerald-950/40 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Rural Accessibility First</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Voice-First Agronomy in Farmer Dialects</h2>
+        <p class="text-slate-400 text-base">Farmers often cannot type complex chemical names on a keyboard. Our multilingual voice engine enables hands-free voice interaction in Marathi and Hindi.</p>
+      </div>
+
+      <div class="max-w-4xl mx-auto glass-panel p-6 sm:p-10 border-emerald-500/25 space-y-8">
+        
+        <!-- Language Switcher Tabs -->
+        <div class="flex items-center justify-center gap-3">
+          <button class="voice-lang-tab active px-5 py-2 rounded-xl border border-emerald-400 bg-emerald-950/60 text-sm font-semibold text-white transition-all" data-lang="marathi">
+            मराठी (Marathi)
+          </button>
+          <button class="voice-lang-tab px-5 py-2 rounded-xl border border-slate-800 bg-slate-900/60 text-sm font-semibold text-slate-300 hover:border-emerald-500/50 transition-all" data-lang="hindi">
+            हिंदी (Hindi)
+          </button>
+          <button class="voice-lang-tab px-5 py-2 rounded-xl border border-slate-800 bg-slate-900/60 text-sm font-semibold text-slate-300 hover:border-emerald-500/50 transition-all" data-lang="english">
+            English
+          </button>
+        </div>
+
+        <!-- Voice Chat Simulation Box -->
+        <div class="space-y-6">
+          
+          <!-- Farmer Input Speech -->
+          <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800 flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl shrink-0">
+              👨‍🌾
+            </div>
+            <div class="space-y-1">
+              <span class="text-xs font-mono text-slate-400">FARMER VOICE INPUT</span>
+              <p id="voice-prompt-text" class="text-base font-semibold text-white italic">
+                “माझ्या टोमॅटो पिकावर काळे डाग पडले आहेत, काय औषध फवारावे?”
+              </p>
+            </div>
+          </div>
+
+          <!-- AI Response Speech with Voice Wave -->
+          <div class="p-6 rounded-2xl bg-emerald-950/40 border border-emerald-500/30 flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl shrink-0">
+              🤖
+            </div>
+            <div class="space-y-3 w-full">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono text-emerald-400 font-semibold">KRISHI-AADHAR AI RESPONSE (TTS)</span>
+                
+                <!-- Audio Wave Visualizer -->
+                <div id="voice-audio-wave" class="audio-wave">
+                  <div class="audio-bar"></div>
+                  <div class="audio-bar"></div>
+                  <div class="audio-bar"></div>
+                  <div class="audio-bar"></div>
+                  <div class="audio-bar"></div>
+                </div>
+              </div>
+
+              <p id="voice-answer-text" class="text-sm font-medium text-slate-200 leading-relaxed">
+                “टोमॅटो पिकावरील लक्षणे अर्ली ब्लाईट (Early Blight) करपा रोगाची आहेत. यावर रिडोमिल गोल्ड (Ridomil Gold) किंवा मॅन्कोझेब ७५% WP २.५ ग्रॅम प्रति लिटर पाण्यात मिसळून तात्काळ फवारणी करा.”
+              </p>
+
+              <div class="pt-2">
+                <button id="voice-play-btn" class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold flex items-center gap-2 transition-all shadow-lg shadow-emerald-500/20">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  <span>Listen to Synthetic Voice</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       8. Deep Mathematical & Algorithmic Analysis (Academic Rigor)
+       ========================================================================== -->
+  <section id="architecture" class="py-24 bg-gradient-to-b from-[#0a0f0d] via-[#0f1715] to-[#0a0f0d] border-t border-emerald-950/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Technical Defense & Scientific Proofs</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Mathematical Foundations & Architectural Rigor</h2>
+        <p class="text-slate-400 text-base">Behind the friendly user interface lies rigorous mathematical optimization, edge quantization, and distributed cloud microservices.</p>
+      </div>
+
+      <!-- Proof Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        
+        <!-- Math 1: Depthwise Separable Convolution -->
+        <div class="glass-card p-6 sm:p-8 space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono text-emerald-400">THEOREM 1 • COMPUTER VISION</span>
+            <span class="text-xs font-mono bg-emerald-500/10 text-emerald-300 px-2 py-0.5 rounded">88% FLOPs Reduction</span>
+          </div>
+          <h3 class="text-lg font-bold text-white">Depthwise Separable Convolution Complexity</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Standard 2D convolution convolves across channels simultaneously. Depthwise Separable Convolution decouples spatial filtering ($D_K \times D_K$) from cross-channel linear combination ($1 \times 1$).
+          </p>
+          <div class="p-4 rounded-xl bg-black/60 font-mono text-xs text-emerald-300 overflow-x-auto">
+            $$\text{Cost}_{\text{standard}} = D_K \cdot D_K \cdot M \cdot N \cdot D_F \cdot D_F$$
+            $$\text{Cost}_{\text{separable}} = (D_K^2 \cdot M \cdot D_F^2) + (M \cdot N \cdot D_F^2)$$
+            $$\text{Reduction Ratio} = \frac{1}{N} + \frac{1}{D_K^2} \approx \frac{1}{3^2} \approx 0.111$$
+          </div>
+          <p class="text-[11px] text-slate-400">
+            For $3 \times 3$ convolutional filters ($D_K = 3$), computational overhead decreases by an order of magnitude (8 to 9 times faster on mobile CPUs).
+          </p>
+        </div>
+
+        <!-- Math 2: Haversine Geolocation Distance -->
+        <div class="glass-card p-6 sm:p-8 space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono text-amber-400">THEOREM 2 • GEODESIC LOGISTICS</span>
+            <span class="text-xs font-mono bg-amber-500/10 text-amber-300 px-2 py-0.5 rounded">Great-Circle Navigation</span>
+          </div>
+          <h3 class="text-lg font-bold text-white">Haversine Field-to-Buyer Distance Formula</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Computes great-circle distance between two GPS coordinates $(\phi_1, \lambda_1)$ and $(\phi_2, \lambda_2)$ on a spherical Earth of radius $R = 6,371\text{ km}$, powering our marketplace radius search.
+          </p>
+          <div class="p-4 rounded-xl bg-black/60 font-mono text-xs text-amber-300 overflow-x-auto">
+            $$a = \sin^2\left(\frac{\Delta\phi}{2}\right) + \cos\phi_1 \cos\phi_2 \sin^2\left(\frac{\Delta\lambda}{2}\right)$$
+            $$c = 2 \cdot \text{atan2}\left(\sqrt{a}, \sqrt{1-a}\right)$$
+            $$d = R \cdot c$$
+          </div>
+          <p class="text-[11px] text-slate-400">
+            Provides sub-meter accurate logistic distance without incurring expensive third-party Google Maps billing API calls.
+          </p>
+        </div>
+
+        <!-- Math 3: Hard-Swish Activation -->
+        <div class="glass-card p-6 sm:p-8 space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono text-teal-400">THEOREM 3 • HARDWARE QUANTIZATION</span>
+            <span class="text-xs font-mono bg-teal-500/10 text-teal-300 px-2 py-0.5 rounded">Zero Exponential Ops</span>
+          </div>
+          <h3 class="text-lg font-bold text-white">Hard-Swish ($\text{h-swish}$) SIMD Activation</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Standard Swish requires evaluating $e^{-x}$, which causes severe integer overflow under int8 quantization. MobileNetV3 formulates a piecewise linear surrogate:
+          </p>
+          <div class="p-4 rounded-xl bg-black/60 font-mono text-xs text-teal-300 overflow-x-auto">
+            $$\text{h-swish}(x) = x \cdot \frac{\text{ReLU6}(x + 3)}{6}$$
+            $$\text{where } \text{ReLU6}(z) = \min(\max(0, z), 6)$$
+          </div>
+          <p class="text-[11px] text-slate-400">
+            Enables Qualcomm Hexagon DSPs and ARM NEON SIMD instruction sets to evaluate activation layers in 1–2 clock cycles.
+          </p>
+        </div>
+
+        <!-- Math 4: Confidence Gating -->
+        <div class="glass-card p-6 sm:p-8 space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono text-purple-400">THEOREM 4 • MEDICAL SAFETY GATE</span>
+            <span class="text-xs font-mono bg-purple-500/10 text-purple-300 px-2 py-0.5 rounded">Zero Hallucinations</span>
+          </div>
+          <h3 class="text-lg font-bold text-white">Confidence Gating & Safety Decoupling</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Prescribing the wrong agrochemical can devastate an entire harvest. We enforce an uncompromising probabilistic gating check before querying our verified knowledge base:
+          </p>
+          <div class="p-4 rounded-xl bg-black/60 font-mono text-xs text-purple-300 overflow-x-auto">
+            $$\text{Confidence} = \max_{k} P(\text{Class}_k \mid X) = \max_k \frac{e^{z_k}}{\sum_{j=1}^{C} e^{z_j}}$$
+            $$\text{Status} = \begin{cases} \text{PRESCRIBE\_TREATMENT}, & \text{if } \text{Confidence} \ge 0.70 \\ \text{RESCAN\_SUGGESTION}, & \text{if } \text{Confidence} < 0.70 \end{cases}$$
+          </div>
+          <p class="text-[11px] text-slate-400">
+            Ambiguous leaf photos or background noise are safely rejected rather than speculative chemicals being recommended.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- High-Resolution Architecture Diagrams -->
+      <div class="space-y-12">
+        <div class="glass-panel p-6 sm:p-10 border-emerald-500/30">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+            <div>
+              <h3 class="text-xl font-bold text-white">System Architecture & Microservices Topology</h3>
+              <p class="text-xs text-slate-400">Four-tier enterprise decoupling: Android Compose, Spring Boot 3.2.5 Gateway, Neon PostgreSQL, FastAPI ML.</p>
+            </div>
+            <a href="assets/images/system_architecture.png" target="_blank" class="text-xs font-semibold text-emerald-400 hover:text-emerald-300 flex items-center gap-1">
+              <span>View Full Resolution</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+          </div>
+          <img src="assets/images/system_architecture.png" alt="Krishi-Aadhar System Architecture Diagram" class="w-full rounded-xl border border-emerald-950 shadow-2xl" loading="lazy">
+        </div>
+
+        <div class="glass-panel p-6 sm:p-10 border-emerald-500/30">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+            <div>
+              <h3 class="text-xl font-bold text-white">Technology Stack & Decoupled Libraries</h3>
+              <p class="text-xs text-slate-400">Production-grade technologies selected for latency, resilience, and horizontal scaling.</p>
+            </div>
+            <a href="assets/images/tech_stack.png" target="_blank" class="text-xs font-semibold text-emerald-400 hover:text-emerald-300 flex items-center gap-1">
+              <span>View Full Resolution</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+          </div>
+          <img src="assets/images/tech_stack.png" alt="Krishi-Aadhar Technology Stack Diagram" class="w-full rounded-xl border border-emerald-950 shadow-2xl" loading="lazy">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       9. App Screenshots Showcase Gallery
+       ========================================================================== -->
+  <section id="screenshots" class="py-24 border-t border-emerald-950/40 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Production Interface</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Crafted in Jetpack Compose</h2>
+        <p class="text-slate-400 text-base">Modern Material 3 user interface designed for high readability in outdoor agricultural field sunlight.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Screen 1: Home Farm Tools -->
+        <div class="glass-card p-3 space-y-3 group">
+          <div class="overflow-hidden rounded-xl border border-emerald-950 bg-black">
+            <img src="assets/images/screen_farmtools_full.png" alt="Krishi-Aadhar Farm Tools" class="w-full h-auto group-hover:scale-105 transition-transform duration-300" loading="lazy">
+          </div>
+          <div class="px-2 pb-2">
+            <h4 class="text-sm font-bold text-white">Smart Farm Tools Hub</h4>
+            <p class="text-xs text-slate-400">Quick access to soil analyzer, water scheduler, and crop budget cashbook.</p>
+          </div>
+        </div>
+
+        <!-- Screen 2: Voice Assistant -->
+        <div class="glass-card p-3 space-y-3 group">
+          <div class="overflow-hidden rounded-xl border border-emerald-950 bg-black">
+            <img src="assets/images/screen_voice_assistant.png" alt="Voice Assistant Interface" class="w-full h-auto group-hover:scale-105 transition-transform duration-300" loading="lazy">
+          </div>
+          <div class="px-2 pb-2">
+            <h4 class="text-sm font-bold text-white">Multilingual Voice AI</h4>
+            <p class="text-xs text-slate-400">Animated mic recording with instant translation and verbal response.</p>
+          </div>
+        </div>
+
+        <!-- Screen 3: Marathi Localized -->
+        <div class="glass-card p-3 space-y-3 group">
+          <div class="overflow-hidden rounded-xl border border-emerald-950 bg-black">
+            <img src="assets/images/screen_marathi_active.png" alt="Marathi Localization" class="w-full h-auto group-hover:scale-105 transition-transform duration-300" loading="lazy">
+          </div>
+          <div class="px-2 pb-2">
+            <h4 class="text-sm font-bold text-white">शेतकरी आधार (मराठी)</h4>
+            <p class="text-xs text-slate-400">Complete UI localization supporting regional Maharashtra farmers.</p>
+          </div>
+        </div>
+
+        <!-- Screen 4: Community Feed -->
+        <div class="glass-card p-3 space-y-3 group">
+          <div class="overflow-hidden rounded-xl border border-emerald-950 bg-black">
+            <img src="assets/images/screen_community.png" alt="Farmer Community Feed" class="w-full h-auto group-hover:scale-105 transition-transform duration-300" loading="lazy">
+          </div>
+          <div class="px-2 pb-2">
+            <h4 class="text-sm font-bold text-white">Farmer Community Forum</h4>
+            <p class="text-xs text-slate-400">Share field photos, ask questions, and learn from progressive farmers.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       10. APK Direct Download Hub & Integrity Verification
+       ========================================================================== -->
+  <section id="download" class="py-24 bg-gradient-to-b from-[#0a0f0d] via-[#064e3b22] to-[#0a0f0d] border-t border-emerald-950/40 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-4xl mx-auto glass-panel p-8 sm:p-14 border-emerald-500/35 relative overflow-hidden">
+        
+        <!-- Glow Backdrop -->
+        <div class="absolute -top-24 -right-24 w-72 h-72 bg-emerald-500/20 blur-3xl rounded-full pointer-events-none"></div>
+
+        <div class="text-center space-y-4 mb-10">
+          <div class="inline-flex items-center gap-2 hero-badge">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            <span>Official Release Build</span>
+          </div>
+          <h2 class="text-3xl sm:text-5xl font-extrabold text-white">Download Krishi-Aadhar APK</h2>
+          <p class="text-slate-300 text-base max-w-xl mx-auto">Install directly on any Android smartphone. Connects out-of-the-box to live Render cloud backend & ML microservice.</p>
+        </div>
+
+        <!-- Download Action Buttons -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
+          <a href="downloads/krushi-aadhar-cloud.apk" download="krushi-aadhar-cloud.apk" class="w-full sm:w-auto glow-btn px-8 py-4 text-base flex items-center justify-center gap-3">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+            <div class="text-left">
+              <div class="text-sm font-extrabold leading-none">Direct Download APK</div>
+              <div class="text-[11px] font-mono text-emerald-100 opacity-90 mt-1">v1.0.0-cloud • 27.1 MB</div>
+            </div>
+          </a>
+
+          <button class="open-qr-btn w-full sm:w-auto px-6 py-4 rounded-xl border border-slate-700 bg-slate-900/90 hover:bg-slate-800 text-slate-200 text-sm font-semibold flex items-center justify-center gap-2 transition-all">
+            <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"/></svg>
+            <span>Scan QR Code</span>
+          </button>
+        </div>
+
+        <!-- Specifications & Hash Verification -->
+        <div class="bg-black/50 p-6 rounded-2xl border border-emerald-950 space-y-4 mb-10">
+          <div class="text-xs font-bold uppercase tracking-wider text-slate-300">Package Verification & Checksum</div>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs">
+            <div>
+              <span class="text-slate-400">Package Name:</span>
+              <div class="font-mono text-slate-200 font-semibold truncate">com.krushiadhaar.app</div>
+            </div>
+            <div>
+              <span class="text-slate-400">Min Android:</span>
+              <div class="font-mono text-slate-200 font-semibold">Android 7.0 (API 24)</div>
+            </div>
+            <div>
+              <span class="text-slate-400">Target SDK:</span>
+              <div class="font-mono text-slate-200 font-semibold">Android 14 (API 34)</div>
+            </div>
+            <div>
+              <span class="text-slate-400">File Size:</span>
+              <div class="font-mono text-slate-200 font-semibold">28,433,934 Bytes</div>
+            </div>
+          </div>
+
+          <div class="pt-2 border-t border-emerald-950 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div class="text-xs text-slate-400 font-mono truncate">
+              <span class="text-slate-400 font-sans">SHA-256:</span> 5860E60B9A4BECC86F107972F200032E0F6B692843CDA5F739083AC37F080104
+            </div>
+            <button class="copy-btn text-xs font-semibold text-emerald-400 hover:text-emerald-300 shrink-0" data-copy-text="5860E60B9A4BECC86F107972F200032E0F6B692843CDA5F739083AC37F080104">
+              Copy Hash
+            </button>
+          </div>
+        </div>
+
+        <!-- 3-Step Simple Installation Guide -->
+        <div class="space-y-4">
+          <h3 class="text-base font-bold text-white text-center">3-Step Installation Guide</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
+            <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-1">
+              <div class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center text-xs mb-2">1</div>
+              <div class="font-bold text-white">Download APK</div>
+              <p class="text-slate-400">Tap the direct download button above or scan the QR code using your phone camera.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-1">
+              <div class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center text-xs mb-2">2</div>
+              <div class="font-bold text-white">Allow Install</div>
+              <p class="text-slate-400">If prompted, enable "Install unknown apps" in Chrome / Files settings for smooth installation.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-1">
+              <div class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center text-xs mb-2">3</div>
+              <div class="font-bold text-white">Launch & Farm!</div>
+              <p class="text-slate-400">Open Krishi-Aadhar, select your preferred language (मराठी / हिंदी / EN), and explore.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       11. Academic Credits & Project Defense Team
+       ========================================================================== -->
+  <section class="py-20 border-t border-emerald-950/40 bg-[#0a0f0d]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-4xl mx-auto glass-panel p-8 border-emerald-950 text-center space-y-6">
+        <span class="text-xs font-mono text-emerald-400 font-semibold uppercase tracking-wider">Academic Credibility & Authorship</span>
+        <h3 class="text-2xl font-bold text-white">Department of Computer Science & Engineering (AIML)</h3>
+        <p class="text-sm text-slate-300">
+          <strong>KIT's College of Engineering Kolhapur (Empowered Autonomous)</strong><br>
+          Under the expert mentorship of <strong class="text-emerald-400">Prof. Komal Jadhav</strong> (Project Guide)
+        </p>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 border-t border-emerald-950">
+          <div class="p-3 rounded-lg bg-slate-900/40">
+            <div class="text-sm font-bold text-white">Sarvesh Joshi</div>
+            <div class="text-xs text-slate-400 font-mono">Roll: A20</div>
+          </div>
+          <div class="p-3 rounded-lg bg-slate-900/40">
+            <div class="text-sm font-bold text-white">Anil Kale</div>
+            <div class="text-xs text-slate-400 font-mono">Roll: A22</div>
+          </div>
+          <div class="p-3 rounded-lg bg-slate-900/40">
+            <div class="text-sm font-bold text-white">Akash Kore</div>
+            <div class="text-xs text-slate-400 font-mono">Roll: A28</div>
+          </div>
+          <div class="p-3 rounded-lg bg-slate-900/40">
+            <div class="text-sm font-bold text-white">Abhijay Tendolkar</div>
+            <div class="text-xs text-slate-400 font-mono">Roll: A68</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       12. QR Code Scanner Modal
+       ========================================================================== -->
+  <div id="qr-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-sm">
+    <div class="glass-panel p-8 max-w-sm w-full border-emerald-500/40 text-center space-y-5 relative">
+      <button id="close-qr-btn" class="absolute top-4 right-4 text-slate-400 hover:text-white" aria-label="Close modal">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+
+      <div class="space-y-1">
+        <h4 class="text-xl font-bold text-white">Scan to Download</h4>
+        <p class="text-xs text-slate-400">Point your smartphone camera to immediately download the 27.1 MB APK.</p>
+      </div>
+
+      <!-- Canvas for QR Code -->
+      <div class="flex justify-center p-3 bg-white rounded-2xl mx-auto shadow-xl">
+        <canvas id="qr-code-canvas" class="w-60 h-60"></canvas>
+      </div>
+
+      <div class="text-[11px] text-slate-400">
+        Direct file link: <a id="qr-direct-link" href="downloads/krushi-aadhar-cloud.apk" class="text-emerald-400 hover:underline break-all">downloads/krushi-aadhar-cloud.apk</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       13. Footer
+       ========================================================================== -->
+  <footer class="py-12 border-t border-emerald-950 bg-[#060a08] text-xs text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-3">
+          <span class="text-2xl">🌾</span>
+          <div>
+            <div class="text-sm font-bold text-white">Krishi-Aadhar (कृषी आधार)</div>
+            <div class="text-[11px]">Next-Gen Smart Agricultural Platform • Built with Pride in India</div>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-6">
+          <a href="#features" class="hover:text-emerald-400 transition-colors">Features</a>
+          <a href="#disease-doctor" class="hover:text-emerald-400 transition-colors">AI Doctor</a>
+          <a href="#npk-calculator" class="hover:text-emerald-400 transition-colors">NPK</a>
+          <a href="#mandi-tracker" class="hover:text-emerald-400 transition-colors">Mandi</a>
+          <a href="downloads/krushi-aadhar-cloud.apk" download="krushi-aadhar-cloud.apk" class="text-emerald-400 font-semibold hover:underline">Download APK</a>
+          <a href="https://github.com/SarveshJoshi242/krushi-sarthi" target="_blank" rel="noopener" class="hover:text-white transition-colors">GitHub</a>
+        </div>
+      </div>
+
+      <div class="mt-8 pt-6 border-t border-emerald-950/60 text-center text-slate-400 text-[11px]">
+        © 2026 Krishi-Aadhar Team • KIT's College of Engineering Kolhapur. Open-source agricultural research.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
